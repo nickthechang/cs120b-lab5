@@ -20,7 +20,7 @@ int main(void) {
     /* Insert your solution below */
 	unsigned char temp = 0x00;
     while (1) {
-	temp = ~(PINA & 0x0F);
+	temp = (~PINA & 0x0F);
 	if(temp == 15 || temp == 14 || temp == 13) {
 		PORTC = 0x3F;
 	}
