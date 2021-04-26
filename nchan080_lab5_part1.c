@@ -40,7 +40,7 @@ int main(void) {
 		PORTC = 0x60;
 	}
 	else if(temp == 0x00)
-		//PORTC = 0x40;
+		PORTC = 0x40;
     }
     return 1;
 }
