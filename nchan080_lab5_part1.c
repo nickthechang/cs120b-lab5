@@ -24,10 +24,10 @@ int main(void) {
 	//unsigned char temp = 0x00;
     while (1) {
 	//temp = PINA & 0x0F;
-	A0 = ~PINA & 0x01;
-	A1 = ~PINA & 0x02;
-	A2 = ~PINA & 0x03;
-	A3 = ~PINA & 0x04;
+	A0 = ~(PINA & 0x01);
+	A1 = ~(PINA & 0x02);
+	A2 = ~(PINA & 0x03);
+	A3 = ~(PINA & 0x04);
 	    
 	if((A3 && A2 && A1 && A0) || 
 	   (A3 && A2 && A1) || (A3 && A2 && A0)) {
