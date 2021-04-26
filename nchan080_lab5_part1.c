@@ -39,13 +39,13 @@ int main(void) {
 	else if((A3 && A0) || (A3) || (A2 && A1 && A0)) {
 		PORTC = 0x3C;
 	}
-	else if((A2 && A1) || (A2 && A0) {
+	else if((A2 && A1) || (A2 && A0)) {
 		PORTC = 0x38;
 	}
 	else if((A2) || (A1&&A0) ) {
 		PORTC = 0x70;
 	}
-	else if((A1) || (A0) {
+	else if((A1) || (A0)) {
 		PORTC = 0x60;
 	}
 	else
