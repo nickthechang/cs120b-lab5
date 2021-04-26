@@ -21,26 +21,26 @@ int main(void) {
 	unsigned char temp = 0x00;
     while (1) {
 	temp = (~PINA & 0x0F);
-	if(temp == 15 || temp == 14 || temp == 13) {
+	if(temp == 0x0D || temp == 0x0E || temp == 0x0F) {
 		PORTC = 0x3F;
 	}
-	else if (temp == 12 || temp == 11 || temp == 10) {
+	else if (temp == 0x0C || temp == 0x0B || temp == 0x0A) {
 		PORTC = 0x3E;
 	}
-	else if(temp == 9 || temp == 8 || temp == 7) {
+	else if(temp == 0x09 || temp == 0x08 || temp == 0x07) {
 		PORTC = 0x3C;
 	}
-	else if(temp == 6 || temp == 5) {
+	else if(temp == 0x06 || temp == 0x05) {
 		PORTC = 0x38;
 	}
-	else if(temp == 4 || temp == 3 ) {
+	else if(temp == 0x04 || temp == 0x03 ) {
 		PORTC = 0x70;
 	}
-	else if(temp == 2 || temp == 1) {
+	else if(temp == 0x02 || temp == 0x01) {
 		PORTC = 0x60;
 	}
-	else if(temp == 0)
-		PORTC = 0x40;
+	else if(temp == 0x00)
+		//PORTC = 0x40;
     }
     return 1;
 }
