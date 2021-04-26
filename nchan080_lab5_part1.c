@@ -16,39 +16,30 @@ int main(void) {
     /* Insert DDR and PORT initializations */
 	DDRA = 0x00; PORTA = 0xFF;
 	DDRC = 0xFF; PORTC = 0x00;
-	unsigned char A0 = 0x00;
-	unsigned char A1 = 0x00;
-	unsigned char A2 = 0x00;
-	unsigned char A3 = 0x00;
+	
     /* Insert your solution below */
-	//unsigned char temp = 0x00;
+	unsigned char temp = 0x00;
     while (1) {
-	//temp = PINA & 0x0F;
-	A0 = ~(PINA & 0x01);
-	A1 = ~(PINA & 0x02);
-	A2 = ~(PINA & 0x03);
-	A3 = ~(PINA & 0x04);
-	    
-	if((A3 && A2 && A1 && A0) || 
-	   (A3 && A2 && A1) || (A3 && A2 && A0)) {
+	temp = ~(PINA & 0x0F);
+	if(temp == 15 || temp == 14 || temp == 13) {
 		PORTC = 0x3F;
 	}
-	else if ((A3 && A2) || (A3 && A1 && A0) || (A3 && A1)) {
+	else if (temp == 12 || temp == 11 || temp == 10) {
 		PORTC = 0x3E;
 	}
-	else if((A3 && A0) || (A3) || (A2 && A1 && A0)) {
+	else if(temp == 9 || temp == 8 || temp == 7) {
 		PORTC = 0x3C;
 	}
-	else if((A2 && A1) || (A2 && A0)) {
+	else if(temp == 6 || temp == 5) {
 		PORTC = 0x38;
 	}
-	else if((A2) || (A1&&A0) ) {
+	else if(temp == 4 || temp == 3 ) {
 		PORTC = 0x70;
 	}
-	else if((A1) || (A0)) {
+	else if(temp == 2 || temp == 1) {
 		PORTC = 0x60;
 	}
-	else
+	else if(temp == 0)
 		PORTC = 0x40;
     }
     return 1;
